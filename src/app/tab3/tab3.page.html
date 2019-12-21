@@ -1,9 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div class="profile-main">
+    <div class="profiletop ion-text-center" *ngIf="authCheckBool === true">
+      <img [src]="userData?.photoURL" alt="">
+      <h5 class="ion-text-capitalize ion-no-margin">{{userData?.displayName}}</h5>
+      <p class="ion-no-margin">{{userData?.email}}</p>
+    </div>
+    <div class="profiletop ion-text-center" *ngIf="authCheckBool === false">
+      <img src="../../assets/img/restoreblack.png" alt="">
+      <h5 class="ion-text-capitalize ion-no-margin">Welcome to reStore</h5>
+      <p class="ion-no-margin">Please login with your Google Account.</p>
+    </div>
+    <div class="profilebot">
+      <h5 class="ion-no-margin">Settings</h5>
+      <ion-item class="ion-no-padding" detail="true" (click)="openStores()" *ngIf="authCheckBool === true">
+        <ion-icon name="ios-business" slot="start"></ion-icon>
+        My Stores
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true" (click)="openEditProfile()" *ngIf="authCheckBool === true">
+        <ion-icon name="ios-create" slot="start"></ion-icon>
+        Edit Profile
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true" (click)="openAbout()">
+        <ion-icon name="md-information-circle" slot="start"></ion-icon>
+        About App
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true" (click)="openLogin()" *ngIf="authCheckBool === false">
+        <ion-icon name="md-log-in" slot="start"></ion-icon>
+        Login
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true">
+        <ion-icon name="md-share" slot="start"></ion-icon>
+        Share App
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true">
+        <ion-icon name="md-star" slot="start"></ion-icon>
+        Rate App
+      </ion-item>
+      <ion-item class="ion-no-padding" detail="true" *ngIf="authCheckBool === true">
+        <ion-icon name="md-log-out" slot="start"></ion-icon>
+        Logout
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

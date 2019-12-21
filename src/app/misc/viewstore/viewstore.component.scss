@@ -1,0 +1,87 @@
+.storev-top {
+    position: relative;
+    margin-bottom: 7%;
+
+    .storev-over {
+        position: absolute;
+        top: 15%;
+        width: 100%;
+        padding: 0 4%;
+
+        ion-button {
+            --padding-start: 10%;
+            --padding-end: 10%;
+        }
+    }
+
+    .store-bgimg {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+    }
+
+    .store-logo {
+        position: absolute;
+        bottom: -25%;
+        width: 100%;
+
+        img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
+.storev-bot {
+    padding: 2%;
+
+    .store-seg {
+        margin-bottom: 2%;
+    }
+
+    .store-desc {
+        margin-bottom: 3%;
+
+        h5 {
+            font-family: opm;
+            font-size: 1.3rem;
+        }
+
+        p {
+            color: #999;
+            font-family: opr;
+        }
+    }
+}
+
+.spec-segmain {
+    h6 {
+        margin-bottom: 4%;
+    }
+
+    h5 {
+        font-family: opm;
+        margin-bottom: 2%;
+    }
+
+    p {
+        margin-bottom: 2%;
+        border-bottom: 1px solid #f5f5f5;
+        padding-bottom: 3%;
+    }
+}
+
+.spec-rcard {
+    padding: 3% 2%;
+    border-radius: 10px;
+    border: 1px solid #f5f5f5;
+    margin-bottom: 4%;
+
+    p {
+        font-size: .9rem;
+        color: #999;
+        margin-bottom: 1%;
+    }
+}

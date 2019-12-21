@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Discover
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div class="discover-main">
+    <div class="discover-top"></div>
+    <div class="discover-bot">
+      <ion-row>
+        <ion-col size="6" (click)="openStore(store)" *ngFor="let store of storesData" >
+          <div class="discover-card ion-text-center">
+            <div class="disc-img">
+              <img [src]="store?.cover" alt="">
+              <h6 class="ion-no-margin ion-text-capitalize">{{store?.name}}</h6>
+              <p class="ion-no-margin disc-desc">
+                {{store?.desc}}
+              </p>
+              <p class="ion-no-margin">
+                <ion-badge color="medium" class="ion-text-capitalize">
+                  <ion-icon name="ios-map"></ion-icon>{{store?.location}}
+                </ion-badge>
+              </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

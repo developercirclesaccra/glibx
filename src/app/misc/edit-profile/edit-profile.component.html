@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="goBack()">
+        <ion-icon name="ios-arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ep-main">
+    <!-- <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item> -->
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Firstname</ion-label>
+      <ion-input type="text" [(ngModel)]="first_name"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Lastname</ion-label>
+      <ion-input type="text" [(ngModel)]="last_name"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" readonly [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <div class="ion-text-center">
+      <ion-button color="primary" (click)="upDateProfile()"  class="loginbtn" expand="full">SAVE</ion-button>
+    </div>
+  </div>
+</ion-content>

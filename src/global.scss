@@ -24,3 +24,136 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: opr;
+    src: url('assets/fonts/OpenSans-Regular.ttf')
+}
+
+@font-face {
+    font-family: opb;
+    src: url('assets/fonts/OpenSans-Bold.ttf')
+}
+
+@font-face {
+    font-family: opm;
+    src: url('assets/fonts/OpenSans-SemiBold.ttf')
+}
+
+@font-face {
+    font-family: opl;
+    src: url('assets/fonts/OpenSans-Light.ttf')
+}
+
+* {
+    font-family: opr;
+}
+
+.homecard {
+    border-radius: 10px;
+    margin-bottom: 3%;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+
+    img {
+        width: 100%;
+        height: 20vh;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .home-inner {
+        padding: 2% 4%;
+
+        h6 {
+            font-family: opm;
+            font-size: 1.1rem;
+            margin-bottom: 1%;
+        }
+
+        ion-badge {
+            font-weight: normal;
+            border-radius: 14px;
+            padding: 2% 5%;
+        }
+
+        p {
+            font-family: opm;
+            color: var(--ion-color-primary);
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.discover-main {
+    padding: 2%;
+
+    .discover-card {
+        padding: 2%;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+        border-radius: 20px;
+        margin-bottom: 4%;
+
+        img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 5% 0;
+        }
+
+        h6 {
+            font-family: opb;
+            font-size: 1.1rem;
+        }
+
+        .disc-desc {
+            font-size: .9rem;
+            font-family: opl;
+            margin: 3% 0;
+        }
+
+        ion-badge {
+            font-weight: normal;
+            border-radius: 30px;
+        }
+    }
+}
+.ep-main {
+    padding: 4%;
+
+    ion-input,
+    ion-select {
+        min-height: 50px;
+        padding: 3% 0;
+        font-family: opm;
+        font-size: 1.2rem;
+    }
+
+    ion-label {
+        font-weight: normal;
+        font-size: 1.1rem;
+        color: #555;
+        font-family: opr;
+    }
+
+    .loginbtn {
+        --border-radius: 10px;
+        height: 50px;
+        font-family: opm;
+        font-size: 1.2rem;
+        --box-shadow: 0 0 0 0;
+        margin: 4% 0px;
+        --border-radius: 11px !important;
+    }
+
+    .label-stacked.sc-ion-label-ios-h {
+        font-size: .9rem;
+    }
+}
+
+ion-title{
+    font-family: opm;
+}

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="goBack()">
+        <ion-icon name="ios-arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ep-main">
+    <div class="ion-text-center eplogo-main">
+      <div class="eplogo" *ngIf="imgurl === null">
+        <ion-icon name="md-camera"></ion-icon>
+      </div>
+      <div class="eplogo" *ngIf="imgurl !== null">
+        <img src="{{imgurl}}" alt="">
+      </div>
+    </div>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Location</ion-label>
+      <ion-input type="text" [(ngModel)]="location"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Website</ion-label>
+      <ion-input type="url" [(ngModel)]="web"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea placeholder="Type your description" rows="4" [(ngModel)]="desc"></ion-textarea>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Facebook Handle</ion-label>
+      <ion-input type="text" placeholder="@examplepage" [(ngModel)]="facebook"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Instagram Handle</ion-label>
+      <ion-input type="text" placeholder="@examplepage" [(ngModel)]="insta"></ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label position="stacked">Twitter Handle</ion-label>
+      <ion-input type="text" placeholder="@examplepage" [(ngModel)]="twitter"></ion-input>
+    </ion-item>
+    <div class="ion-text-center">
+      <ion-button color="primary" (click)="editStore()" class="loginbtn" expand="full">SAVE</ion-button>
+    </div>
+  </div>
+</ion-content>

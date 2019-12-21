@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Product Details
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="goBack()">
+        <ion-icon name="ios-arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="prodv-price">
+    <div class="prodv-pinner">
+      <h5 class="ion-no-margin ion-text-uppercase">BUY NOW</h5>
+    </div>
+  </div>
+  <div class="prodv-main">
+    <div class="prodv-top">
+      <div class="prodv-slides">
+        <ion-slides pager="true" [options]="profvOpts">
+          <ion-slide *ngFor="let image of data?.images">
+            <img [src]="image" alt="">
+          </ion-slide>
+        </ion-slides>
+      </div>
+      <h5 class="ion-no-margin ion-text-capitalize">{{data?.name}}</h5>
+      <div class="prodv-tp">
+        <ion-badge color="dark">{{data?.category}}</ion-badge>
+        <h6 class="ion-no-margin">GH<span>&cent;</span>{{data?.price}}</h6>
+      </div>
+    </div>
+    <div class="prodv-bot">
+      <h6 class="ion-no-margin">Description</h6>
+      <p class="ion-no-margin">
+        {{data?.desc}}
+      </p>
+
+      <div class="prodv-store" *ngIf="storeData !== null" >
+        <div class="prodv-storecard">
+          <ion-item class="ion-no-margin ion-no-padding">
+            <ion-avatar slot="start">
+              <img [src]="storeData[0]?.cover">
+            </ion-avatar>
+            <ion-label>
+              <h6 class="ion-no-margin ion-text-capitalize">{{storeData[0]?.name}}</h6>
+              <ion-badge color="medium" class="ion-text-capitalize">
+                <ion-icon name="ios-map"></ion-icon> {{storeData[0]?.location}}
+              </ion-badge>
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

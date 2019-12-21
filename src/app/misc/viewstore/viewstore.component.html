@@ -1,0 +1,103 @@
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="storeseg === 'products'" >
+    <ion-fab-button (click)="addProd()">
+      <ion-icon name="md-add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="storeview-main">
+    <div class="storev-top">
+      <div class="storev-over">
+        <ion-button color="primary" (click)="goBack()">
+          <ion-icon name="ios-arrow-back" slot="icon-only"></ion-icon>
+        </ion-button>
+      </div>
+      <img src="../../../assets/img/restorebg.png" class="store-bgimg" alt="">
+      <div class="store-logo ion-text-center">
+        <img [src]="data?.cover" alt="">
+      </div>
+    </div>
+    <div class="storev-bot">
+      <div class="store-desc ion-text-center">
+        <h5 class="ion-no-margin ion-text-capitalize">{{data?.name}}</h5>
+        <p class="ion-no-margin ion-text-capitalize">
+          <ion-icon name="md-map"></ion-icon> {{data?.location}}
+        </p>
+      </div>
+      <div class="store-seg">
+        <ion-segment [(ngModel)]="storeseg">
+          <ion-segment-button value="products">
+            Products
+          </ion-segment-button>
+          <ion-segment-button value="review">
+            Reviews
+          </ion-segment-button>
+          <ion-segment-button value="about">
+            About
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <div class="store-content">
+        <div [ngSwitch]="storeseg">
+          <div *ngSwitchCase="'products'">
+            <ion-row>
+              <ion-col size="6" *ngFor="let prod of productsData" (click)="openProduct(prod)">
+                <div class="homecard">
+                  <img [src]="prod?.images[0]" alt="">
+                  <div class="home-inner">
+                    <ion-badge color="dark" class="ion-text-capitalize">{{prod?.category}}</ion-badge>
+                    <h6 class="ion-no-margin ion-text-capitalize">
+                      {{prod?.name}}
+                    </h6>
+                    <p class="ion-no-margin ion-text-right">GH<span>&cent;</span>{{prod?.price}}</p>
+                  </div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div *ngSwitchCase="'review'">
+            <ion-button color="medium" (click)="openReview()" expand="full">Write a Review</ion-button>
+            <div class="spec-rcard" *ngFor="let review of reviewData" >
+              <p class="ion-text-right ion-no-margin ion-text-capitalize">{{review?.createdAt * 1000 | date:'medium'}}</p>
+              <h6 class="ion-no-margin">
+                {{review?.text}}
+              </h6>
+            </div>
+          </div>
+          <div *ngSwitchCase="'about'">
+            <div class="spec-segmain">
+              <h6 class="ion-no-margin">
+                {{data?.desc}}
+              </h6>
+            </div>
+            <div class="spec-segmain">
+              <h5 class="ion-no-margin">Connect</h5>
+              <div class="spec-seginner">
+                <p class="ion-no-margin">
+                  <ion-icon name="md-call"></ion-icon> {{data?.phone}}
+                </p>
+                <p class="ion-no-margin">
+                  <ion-icon name="md-map"></ion-icon> 18th Portman Villa
+                </p>
+                <p class="ion-no-margin">
+                  <ion-icon name="md-at"></ion-icon> {{data?.email}}
+                </p>
+                <p class="ion-no-margin">
+                  <ion-icon name="md-globe"></ion-icon> {{data?.web}}
+                </p>
+                <p class="ion-no-margin" *ngIf="data?.insta !== ''">
+                  <ion-icon name="logo-instagram"></ion-icon> @{{data?.insta}}
+                </p>
+                <p class="ion-no-margin" *ngIf="data?.twitter !== ''">
+                  <ion-icon name="logo-twitter"></ion-icon> @{{data?.twitter}}
+                </p>
+                <p class="ion-no-margin" *ngIf="data?.facebook !== ''">
+                  <ion-icon name="logo-facebook"></ion-icon> @{{data?.faceboook}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

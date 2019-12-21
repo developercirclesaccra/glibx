@@ -1,5 +1,7 @@
 {
   "name": "recycleapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

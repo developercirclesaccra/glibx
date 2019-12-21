@@ -1,0 +1,39 @@
+.loginmain {
+    margin-top: 7%;
+    padding: 3%;
+
+    img {
+        border-radius: 50%;
+    }
+
+    h4 {
+        font-size: 1.8rem;
+        font-family: opb;
+        margin: 3% 0;
+    }
+
+    h6 {
+        font-size: 1.1rem;
+        font-family: opl;
+        line-height: 23px;
+        margin-bottom: 3%;
+    }
+}
+
+.loginmid {
+    h6 {
+        font-size: 1.1rem;
+        color: #999;
+        margin-bottom: 3%;
+    }
+
+    ion-button {
+        --ion-color-base: #DB4437;
+        --ion-color-contrast: #fff;
+        font-family: opb;
+    }
+}
+
+.logintop {
+    margin-top: 3%;
+}
